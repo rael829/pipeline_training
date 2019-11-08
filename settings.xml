@@ -16,7 +16,7 @@
     <password>${env.NEXUS_TOKEN}</password> 
   </server>
   <server> 
-    <id>maven-central</id> 
+    <id>central-mirror</id> 
     <username>admin</username> 
     <password>${env.NEXUS_TOKEN}</password> 
   </server>
