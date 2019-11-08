@@ -20,6 +20,16 @@
     <username>admin</username> 
     <password>${env.NEXUS_TOKEN}</password> 
   </server>
+  <server> 
+    <id>spring-milestone-mirror</id> 
+    <username>admin</username> 
+    <password>${env.NEXUS_TOKEN}</password> 
+  </server>
+  <server> 
+    <id>spring-snapshot-mirror</id> 
+    <username>admin</username> 
+    <password>${env.NEXUS_TOKEN}</password> 
+  </server>
   </servers>
   <mirrors>
      <mirror>
@@ -47,9 +57,9 @@
         <url>${env.NEXUS_HOST}/repository/spring-milestones</url>
     </mirror>
 </mirrors>
-<pluginGroups>
+<!-- <pluginGroups>
    <pluginGroup>org.apache.maven.plugins</pluginGroup>
    <pluginGroup>org.codehaus.mojo</pluginGroup>
-</pluginGroups>
+</pluginGroups> -->
 
 </settings>
