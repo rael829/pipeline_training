@@ -7,10 +7,10 @@ stages:
         mkdir -p /root/.m2 && mv settings.xml /root/.m2/
         mvn clean install
     env:
-      NEXUS_HOST: http://sonatype-nexus-service.sonatype-nexus:8081
+      NEXUS_HOST: http://sonatype-nexus.sonatype-nexus:8081
     envFrom:
     - sourceName: nexus-key
-      sourceKey: token
+      sourceKey: admin
       targetKey: NEXUS_TOKEN
 - name: Publish
   steps:
@@ -22,3 +22,4 @@ stages:
   steps:
   - applyYamlConfig:
       path: ./deployment.yaml
+notification: {}
