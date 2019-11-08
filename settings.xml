@@ -16,6 +16,11 @@
     <password>${env.NEXUS_TOKEN}</password> 
   </server>
   <server> 
+    <id>maven-central</id> 
+    <username>admin</username> 
+    <password>${env.NEXUS_TOKEN}</password> 
+  </server>
+  <server> 
     <id>spring-repository-mirror</id> 
     <username>admin</username> 
     <password>${env.NEXUS_TOKEN}</password> 
