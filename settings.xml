@@ -45,9 +45,9 @@
         <url>${env.NEXUS_HOST}/repository/spring-milestones</url>
     </mirror>
 </mirrors>
-<!-- <pluginGroups>
+<pluginGroups>
    <pluginGroup>org.apache.maven.plugins</pluginGroup>
    <pluginGroup>org.codehaus.mojo</pluginGroup>
-</pluginGroups> -->
+</pluginGroups>
 
 </settings>
