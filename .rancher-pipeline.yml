@@ -22,6 +22,7 @@ stages:
       registry: 172.16.1.80:30928
     env:
       PLUGIN_INSECURE: "true"
+      PLUGIN_MIRROR: http://sonatype-nexus.sonatype-nexus:8083
 - name: Deploy
   steps:
   - applyYamlConfig:
