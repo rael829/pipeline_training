@@ -18,6 +18,10 @@ stages:
       dockerfilePath: ./Dockerfile
       buildContext: .
       tag: example-greenhouse:${CICD_EXECUTION_SEQUENCE}
+      pushRemote: true
+      registry: 172.16.1.80:30928
+    env:
+      PLUGIN_INSECURE: "true"
 - name: Deploy
   steps:
   - applyYamlConfig:
