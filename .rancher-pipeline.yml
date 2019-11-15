@@ -2,25 +2,16 @@ stages:
 - name: Build
   steps:
   - runScriptConfig:
-      image: maven:3-jdk-8
+      image: maven:3-jdk-7
       shellScript: |-
         mkdir -p /root/.m2 && mv settings.xml /root/.m2/
-        mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.5.0.1254:sonar \
-         -Dsonar.projectKey=test \
-         -Dsonar.host.url=${SONA_HOST} \
-         -Dsonar.login=${SONA_KEY}
+        mvn clean install
     env:
       NEXUS_HOST: http://172.16.1.80:31231/
     envFrom:
     - sourceName: nexus-key
       sourceKey: admin
       targetKey: NEXUS_TOKEN
-    - sourceName: sona-key
-      sourceKey: host
-      targetKey: SONA_HOST
-    - sourceName: sona-key
-      sourceKey: token
-      targetKey: SONA_KEY
 - name: Publish
   steps:
   - publishImageConfig:
