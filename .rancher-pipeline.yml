@@ -6,14 +6,20 @@ stages:
       shellScript: |-
         mkdir -p /root/.m2 && mv settings.xml /root/.m2/
         mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar \
-         -Dsonar.host.url=${SONAR_HOST} \
-         -Dsonar.login=${SONAR_KEY}
+         -Dsonar.host.url=${SONA_HOST} \
+         -Dsonar.login=${SONA_KEY}
     env:
       NEXUS_HOST: http://172.16.1.80:31231/
     envFrom:
     - sourceName: nexus-key
       sourceKey: admin
       targetKey: NEXUS_TOKEN
+    - sourceName: sona-key
+      sourceKey: host
+      targetKey: SONA_HOST
+    - sourceName: sona-key
+      sourceKey: token
+      targetKey: SONA_KEY
 - name: Publish
   steps:
   - publishImageConfig:
