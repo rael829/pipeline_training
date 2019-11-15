@@ -5,7 +5,9 @@ stages:
       image: maven:3-jdk-7
       shellScript: |-
         mkdir -p /root/.m2 && mv settings.xml /root/.m2/
-        mvn clean install
+        mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.6.0.1398:sonar \
+         -Dsonar.host.url=${SONAR_HOST} \
+         -Dsonar.login=${SONAR_KEY}
     env:
       NEXUS_HOST: http://172.16.1.80:31231/
     envFrom:
