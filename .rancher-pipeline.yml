@@ -5,7 +5,7 @@ stages:
       image: maven:3-jdk-7
       shellScript: |-
         mkdir -p /root/.m2 && mv settings.xml /root/.m2/
-        mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.5.0.1254:sonar \
+        mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:2.6:sonar \
          -Dsonar.projectKey=test \
          -Dsonar.host.url=${SONA_HOST} \
          -Dsonar.login=${SONA_KEY}
