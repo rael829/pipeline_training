@@ -2,7 +2,7 @@ stages:
 - name: Build
   steps:
   - runScriptConfig:
-      image: maven:3-jdk-7
+      image: maven:3-jdk-8
       shellScript: |-
         mkdir -p /root/.m2 && mv settings.xml /root/.m2/
         mvn clean install org.sonarsource.scanner.maven:sonar-maven-plugin:3.5.0.1254:sonar \
